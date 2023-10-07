@@ -33,6 +33,7 @@ const Page: React.FC = () => {
     return (
         <section>
             <div className={style.container}>
+                <h2>Register</h2>
                 <form id="signup-form" onSubmit={signup}>
                     <input type="text" id="name" placeholder="Name" onChange={handleInputChange} />
                     <input type="email" id="email" placeholder="Email" onChange={handleInputChange} />

@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import style from './page.module.css';
+import loginUser from '../api/login'
 
 const Page: React.FC = () => {
     const [user, setUser] = useState({
@@ -15,17 +16,18 @@ const Page: React.FC = () => {
     }
 
     function login(event: React.FormEvent<HTMLFormElement>) {
-        event.preventDefault(); // Prevent the form from submitting and reloading the page
+        event.preventDefault();
         if (user.email === '' || user.password === '') {
             alert('Please fill all the fields');
             return;
         }
-        console.log(user);
+        loginUser(user);
     }
 
     return (
         <section>
             <div className={style.container}>
+                <h2>Welcome back</h2>
                 <form onSubmit={login}>
                     <input
                         type="email"
